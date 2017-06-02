@@ -1,25 +1,45 @@
 #include <stdio.h>
 #include <stdlib.h>
-void fib()
+int x1,x2;
+void Enter()
 {
-   int x1,x2,tmp,i;
    printf("Enter x1,x2: ");
    scanf("%d %d",&x1,&x2);
-   int a1=0, a2=1,sum=0;
-   for(i=x1;i<x2;i++)
-       {
-       tmp = a1;
-       if(x2>=a1 && a1>=x1)
-           {
-           printf("%d ",a1);
-           }
-       a1 = a2;
-       a2 = a2 + tmp;
-       sum+=a1;
-       }
-   }
+}
+void fib(int *a)
+{
+    int tmp,i;
+    int a1=0, a2=1,sum=0;
+    for(i=x1;i<x2;i++)
+         {
+          tmp = a1;
+          if(x2>=a1 && a1>=x1)
+              {
+              a[i]=a1;
+              }
+          a1 = a2;
+          a2 = a2 + tmp;
+          sum+=a1;
+          }
+      }
+void print(int *a)
+{
+    int i;
+    for(i=x1;i<x2;i++)
+        {
+        if(x2>=a[i] && a[i]>=x1)
+            {
+            printf("%d ",a[i]);
+            }
+        }
+}
+
 int main()
 {
-    fib();
+    int*a=(int*)malloc(10*sizeof(int));
+    Enter();
+    fib(a);
+    print(a);
+    free(a);
     return 0;
 }
